@@ -1,34 +1,150 @@
-.border {
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
+*{padding: 0px; margin:0px;}
+
+.mborder {
+  margin: 6px;
+  background-color: steelblue;
+  box-shadow: 1px 1px 5px 2px #224b4b;
+  border-radius: 10px;
+  border: solid black 0px;
+  text-align: left;
+  padding: 15px;
 }
 
-#sampleui {
-  max-width: 450px;
-  margin-left: 5%;
-  height: 100%;
+.booksHolder{
+  margin: 6px;
+  box-shadow: 1px 1px 5px 2px #224b4b;
+  border-radius: 10px;
+  border: solid steelblue 2px;
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
 }
 
-#sampleposting {
-  max-width: 450px;
+#booksContainer{
+  max-height: 300px;
+  overflow: auto;
+  margin: 6px;
+  border-radius: 5px;
+  border: solid steelblue 2px;
+  padding:10px;
+}
+
+#booksContainer span:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#commentsContainer{
+  max-height: 300px;
+  overflow: auto;
+  margin: 6px;
+  border-radius: 5px;
+  border: solid steelblue 2px;
+  padding:10px;
+}
+
+.bookItem{
+
+}
+
+#bookEditor{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 0;
+  flex-grow: 1;
+}#bookEditor *{
+  margin-right:5px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+#newBookForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  vertical-align: middle;
+  flex-basis: 0;
+  flex-grow: 1;
+}#newBookForm *{
+  margin-right:5px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+#fontEnd{
+  width: 90%;
+}
+
+.myBtn{
+  padding: 2px;
+  margin: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  border: 0;
+  color: white;
+  background-color: transparent;
+  border: solid 2px rgb(149, 223, 162);
+}
+
+.myBtn:hover{
+  background-color: rgb(149, 223, 162);
+  box-shadow: 1px 1px 5px 2px #224b4b;
+  color: rgb(63, 66, 68);
+}
+
+.myBtnDel{
+  padding: 2px;
+  margin: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  border: 0;
+  color: white;
+  background-color: transparent;
+  border: solid 2px rgb(218, 72, 72);
+}
+
+.myBtnDel:hover{
+  background-color: rgb(218, 72, 72);
+  box-shadow: 1px 1px 5px 2px #224b4b;
+  color: white;
+}
+
+li{
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+#container{ 
+  color: white;
+  margin:20px auto;
+  padding:10px;
+  width: 70%;
+  background-color: rgb(63, 66, 68);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px #224b4b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+}body{
   text-align: center;
-  margin-left: 5%;
+  background: linear-gradient(170deg, #21b5c0 50%, #36b340);
+  background-attachment: fixed;
+}#testAPIContainer{
+   width: 90%;
+}#testApi{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}#testApi *{
+  flex-basis: 0;
+  flex-grow: 1;
 }
 
-#userstories {
-  margin-left: 5%;
-}
+#display{
 
-form {
-  padding: 5px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-}
-
-input {
-  margin-bottom: 5px;
 }

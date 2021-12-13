@@ -6,54 +6,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/public/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
     code {
-      background-color: whitesmoke;
+      background-color: rgb(63, 52, 52);
     }
   </style>
 </head>
 <body>
-<header>
-  <h1>Personal Library</h1>
-</header>
-<br>
-<div id ='sampleposting'>
-  <h2 style="text-align: left">Test API responses</h2>
-  <form action="/api/books" method="post" class="border">
-    <h4>Test post to /api/books</h4>
-    <label for="title" >Book Title</label>
-    <input type="text" id="title" name="title" value=""><br>
-    <input type="submit" value="Submit">
-  </form>
-  <form action="" method="post" id="commentTest" class="border">
-    <h4>Test post to /api/books/{bookid}</h4>
-    <label for="idinputtest">BookId to comment on</label>
-    <input type="text" name="id" value="" id="idinputtest"><br>
-    <label for="comment">Comment</label>
-    <input type="text" id="comment" name="comment" value=""><br>
-    <input type="submit" value="Submit">
-  </form>
-</div>
-<hr style='margin: 50px'>
-<div id='sampleui'>
-  <h2 style="text-align: left">Sample Front-End</h2>
-  <form id="newBookForm" class="border">
-    <label for="bookTitleToAdd">New Book Title</label>
-    <input type="text" id="bookTitleToAdd" name="title" placeholder="Moby Dick" style="width: 295px">
-    <button type="submit" value="Submit" id="newBook">Submit New Book!</button>
-  </form>
-  <div id='display'></div>
-  <div id='bookDetail' class='border'>
-    <p id='detailTitle'>Select a book to see it's details and comments</p>
-    <ol id='detailComments'></ol>
+<div id='container'>
+  <header style='text-align: center; margin-top: 50px;'>
+    <h1 style='font-weight: bolder;'>Personal Library</h1>
+    <p>(a project for freeCodeCamp's Information Security and Quality Assurance certification)</p>
+  </header>
+  <br>
+  <div id='testAPIContainer'>
+    <h4 style="font-weight: 600;">Sample API tests with JSON response</h4>
+    <div>
+      To get a better sense of what is going on behind the scenes, you can use the following two forms to submit new books and new book comments to the library, respectively. The API will respond to your POSTs with a JSON file.
+    </div>
+    <br>
+    <div id ='testAPI'>
+    <div>
+      <form action="/api/books" method="post" class="mborder">
+        <h4 style='font-weight: bold;'>Add a Book to the library</h4>
+        <label for="title" >Book Title</label>
+        <input class='form-control' placeholder="title" type="text" id="title" name="title" value=""><br>
+        <div style="text-align: right;">
+        <input class='myBtn' type="submit" value="Submit"><br>
+        <small style="margin-top: 5px; display: block;">POST /api/books</small>
+       </div>
+      </form>
+    </div>
+    <div>
+      <form action="" method="post" id="commentTest" class="mborder">
+        <h4 style='font-weight: bold;'>Comment a Book in the library</h4>
+        <div class='space-between'>
+          <label for="idinputtest">Book ID </label>
+          <input class='form-control'  placeholder="_id" type="text" name="id" value="" id="idinputtest"><br>
+        </div>
+        <div class='space-between'>
+          <label for="comment">Comment</label>
+          <input class='form-control' placeholder="comment" type="text" id="comment" name="comment" value=""><br>
+        </div>
+        <div style="text-align: right;">
+        <input class='myBtn' type="submit" value="Submit">
+        <small style="margin-top: 5px; display: block;">POST /api/books/{bookid}</small>
+        </div>
+      </form>
+    </div>
   </div>
-  <button id='deleteAllBooks'>Delete all books...</button>
+  </div>
+  <div id='fontEnd'>
+  <hr style='margin-top: 20px'>
+  <div id='sampleui' style="width: 100%;">
+    <h4 style="font-weight: 600;">Sample Front End</h4>
+    <div>
+      Here you can play with adding new books, seeing existing comments for each book in the library, and adding new comments to existing books. You can also delete individual books as well as delete all the books in the library.
+    </div>
+    <br>
+    <form id="newBookForm" class="mborder">
+      <label for="bookTitleToAdd">New Book Title</label>
+      <input style='flex-grow: 4;'  class='form-control' type="text" id="bookTitleToAdd" name="title" placeholder="Book name" style="width: 295px">
+      <input class='myBtn' type="button" value="Add Book" id="newBook">
+    </form>
+    <div id='bookEditor'>
+    <div id='display' class='booksHolder'>
+      <h4 style='font-weight: bold;'>Books</h4>
+    </div>
+    <div id='bookDetail' class='booksHolder'>
+      <p id='detailTitle'>Select a book to see it's details and comments</p>
+      <ol id='detailComments'></ol>
+    </div>
+    </div>
+    <button class='myBtnDel' id='deleteAllBooks'>Delete all books...</button>
+  </div>
+  <hr style='margin: 50px'>
+  </div>
+  <p id='info'></p>
 </div>
-<hr style='margin: 50px'>
 
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"
         integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
         crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="/public/client.js"></script>
 <script>
   /*
