@@ -172,7 +172,39 @@ li{
 #fontEnd{
   width: 90%;
 }
-h4{
-  
-  color: aquamarine;
+
+@media (max-width: 800px){
+  #newBookForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: baseline;
+    vertical-align: middle;
+    flex-basis: 0;
+    flex-grow: 1;
+  }#newBookForm *{
+    margin-right:5px;
+    flex-basis: 0;
+    flex-grow: 1;
+  }#newBookForm button{
+    margin-top: 5px;
+  }
+  #testApi{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }#testApi *{
+    flex-basis: 0;
+    flex-grow: 1;
+  }#bookEditor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0;
+    flex-grow: 1;
+  }#bookEditor *{
+    margin-right:5px;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 }
