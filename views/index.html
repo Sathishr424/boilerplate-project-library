@@ -22,7 +22,7 @@
   </header>
   <br>
   <div id='testAPIContainer'>
-    <h4 style="font-weight: 600;">Sample API tests with JSON response</h4>
+    <h4 style="font-weight: 600; color:steelblue">Sample API tests with JSON response</h4>
     <div>
       To get a better sense of what is going on behind the scenes, you can use the following two forms to submit new books and new book comments to the library, respectively. The API will respond to your POSTs with a JSON file.
     </div>
@@ -30,23 +30,23 @@
     <div id ='testAPI'>
     <div>
       <form action="/api/books" method="post" class="mborder">
-        <h4 style='font-weight: bold;'>Add a Book to the library</h4>
+        <h4 style='font-weight: bold; color:whitesmoke'>Add a Book to the library</h4>
         <label for="title" >Book Title</label>
         <input class='form-control' placeholder="title" type="text" id="title" name="title" value=""><br>
         <div style="text-align: right;">
-        <input class='myBtn' type="submit" value="Submit"><br>
-        <small style="margin-top: 5px; display: block;">POST /api/books</small>
-       </div>
+          <input class='myBtn' type="submit" value="Submit"><br>
+          <small style="margin-top: 5px; display: block;">POST /api/books</small>
+        </div>
       </form>
     </div>
     <div>
       <form action="" method="post" id="commentTest" class="mborder">
-        <h4 style='font-weight: bold;'>Comment a Book in the library</h4>
-        <div class='space-between'>
+        <h4 style='font-weight: bold; color:whitesmoke'>Comment a Book in the library</h4>
+        <div class=''>
           <label for="idinputtest">Book ID </label>
           <input class='form-control'  placeholder="_id" type="text" name="id" value="" id="idinputtest"><br>
         </div>
-        <div class='space-between'>
+        <div class=''>
           <label for="comment">Comment</label>
           <input class='form-control' placeholder="comment" type="text" id="comment" name="comment" value=""><br>
         </div>
@@ -59,9 +59,8 @@
   </div>
   </div>
   <div id='fontEnd'>
-  <hr style='margin-top: 20px'>
-  <div id='sampleui' style="width: 100%;">
-    <h4 style="font-weight: 600;">Sample Front End</h4>
+  <div id='sampleui' style="width: 100%; margin-top:40px">
+    <h4 style="font-weight: 600; color:steelblue">Sample Front End</h4>
     <div>
       Here you can play with adding new books, seeing existing comments for each book in the library, and adding new comments to existing books. You can also delete individual books as well as delete all the books in the library.
     </div>
@@ -73,7 +72,7 @@
     </form>
     <div id='bookEditor'>
     <div id='display' class='booksHolder'>
-      <h4 style='font-weight: bold;'>Books</h4>
+      <h4 style='font-weight: bold; color:steelblue'>Books</h4>
     </div>
     <div id='bookDetail' class='booksHolder'>
       <p id='detailTitle'>Select a book to see it's details and comments</p>
@@ -82,10 +81,11 @@
     </div>
     <button class='myBtnDel' id='deleteAllBooks'>Delete all books...</button>
   </div>
-  <hr style='margin: 50px'>
   </div>
   <p id='info'></p>
 </div>
+<div class='text-light pt-2 text-center'><h4p style='font-weight: bold; padding: 0px; margin: 0px;text-decoration: none; color: rgb(63, 66, 68); font-size: normal; font-family: Share Tech Mono, sans;'>Designed and Coded By</h4></div>
+<div class='text-light pb-2 text-center'><p style='padding: 0px; margin: 0px;text-decoration: none; color: rgb(63, 66, 68); font-size: normal; font-family: Share Tech Mono, sans;'><a style='color:rgb(63, 66, 68);' href='https://instagram.com/sat_ig462/' target='_blank' class='text-white'><i class='fa fa-instagram p-1'></i>Sat_ig462</a></p></div>
 
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"
         integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
