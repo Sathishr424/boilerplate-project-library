@@ -27,7 +27,7 @@ $( document ).ready(function() {
       $.each(data.comments, function(i, val) {
         comments.push('<li>' +val+ '</li>');
       });comments.push("</ul>");
-      comments.push('<br><form id="newCommentForm" class="mborder"><label for="commentToAdd">Add new comment</label><input type="text" class="form-control" id="commentToAdd" name="comment" placeholder="New Comment"><div style="text-align:center  "><input type="button" style="text-center:right;padding: 2px 10px; margin:5px 0px 0px 0px;display:inline" class="myBtn addComment" id="'+ data._id+'" value="Add Comment"></div></form>');
+      comments.push('<br><form id="newCommentForm" class="mborder"><label for="commentToAdd">Add new comment</label><input type="text" class="form-control" id="commentToAdd" name="comment" placeholder="New Comment"><button style="text-center:right;padding: 2px 10px; margin:5px 0px 0px 0px;" class="myBtn addComment" id="'+ data._id+'">Add comment</button></form>');
       // comments.push('<br><button class="myBtn" id="'+ data._id+'">Add Comment</button>');
       comments.push('<div style="text-align:right; margin-top:5px" ><button class="myBtnDel deleteBook" id="'+ data._id+'">Delete this Book</button></div>');
       $('#detailComments').html(comments.join(''));
@@ -61,7 +61,7 @@ $( document ).ready(function() {
           $.each(d.comments, function(i, val) {
             comments.push('<li>' +val+ '</li>');
           });comments.push("</ul>");
-          comments.push('<br><form id="newCommentForm" class="mborder"><label for="commentToAdd">Add new comment</label><input type="text" class="form-control" id="commentToAdd" name="comment" placeholder="New Comment"><div style="text-align:center  "><input type="button" style="text-center:right;padding: 2px 10px; margin:5px 0px 0px 0px;display:inline" class="myBtn addComment" id="'+ data._id+'" value="Add Comment"></div></form>');
+          comments.push('<br><form id="newCommentForm" class="mborder"><label for="commentToAdd">Add new comment</label><input type="text" class="form-control" id="commentToAdd" name="comment" placeholder="New Comment"><button style="text-center:right;padding: 2px 10px; margin:5px 0px 0px 0px;" class="myBtn addComment" id="'+ data._id+'">Add comment</button></form>');
           // comments.push('<br><button class="myBtn" id="'+ data._id+'">Add Comment</button>');
           comments.push('<div style="text-align:right; margin-top:5px" ><button class="myBtnDel deleteBook" id="'+ data._id+'">Delete this Book</button></div>');
           $('#detailComments').html(comments.join(''));
