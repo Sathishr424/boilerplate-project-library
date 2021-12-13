@@ -45,10 +45,15 @@ module.exports = function (app) {
       //response will contain new book object including atleast _id and title
       if (!title) res.send("missing required field title");
       else{
-        Book.create({title: title, comments: []}, (err,data)=>{
-          if (err) {console.log(err); res.send({error: 'Unknow error while creating book..'})}
-          else if (data) {res.send({title: data.title, _id: data._id})}
-          else {res.send(res.send({error: 'Unknow error while creating book..'}))};
+        Book.findOne({title:title}, (e,d)=>{
+          if (d) {res.send({title: d.title, _id: d._id, thereInDB:true})}
+          else {
+            Book.create({title: title, comments: []}, (err,data)=>{
+              if (err) {console.log(err); res.send({error: 'Unknow error while creating book..'})}
+              else if (data) {res.send({title: data.title, _id: data._id})}
+              else {res.send(res.send({error: 'Unknow error while creating book..'}))};
+            })
+          }
         })
       }
     })
