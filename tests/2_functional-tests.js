@@ -99,7 +99,7 @@ suite('Functional Tests', function() {
       
       test('Test GET /api/books/[id] with valid id in db',  function(done){
         chai.request(server)
-        .get('/api/books/61b66cbf009d69901eb125e6')
+        .get('/api/books/61b6bcb4e9c8cef862f4cd84')
         .end(function(err, res){
           assert.equal(res.status, 200);
           assert.isObject(res.body, 'response should be an object');
@@ -116,7 +116,7 @@ suite('Functional Tests', function() {
       
       test('Test POST /api/books/[id] with comment', function(done){
         chai.request(server)
-        .post('/api/books/61b66cbf009d69901eb125e6')
+        .post('/api/books/61b6bcb4e9c8cef862f4cd84')
         .send({comment: "My test comment"})
         .end(function(err, res){
           assert.equal(res.status, 200);
@@ -130,7 +130,7 @@ suite('Functional Tests', function() {
 
       test('Test POST /api/books/[id] without comment field', function(done){
         chai.request(server)
-        .post('/api/books/61b66cbf009d69901eb125e6')
+        .post('/api/books/61b6bcb4e9c8cef862f4cd84')
         .send({})
         .end(function(err, res){
           assert.equal(res.status, 200);
@@ -156,7 +156,7 @@ suite('Functional Tests', function() {
 
       test('Test DELETE /api/books/[id] with valid id in db', function(done){
         chai.request(server)
-        .delete('/api/books/61b66cb0009d69901eb125e3')
+        .delete('/api/books/61b6bd19e9c8cef862f4cd88')
         .end(function(err, res){
           assert.equal(res.status, 200);
           assert.equal(res.text, 'delete successful');

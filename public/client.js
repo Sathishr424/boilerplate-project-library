@@ -90,6 +90,7 @@ $( document ).ready(function() {
           // if (items.length >= 15) {
           //   items.push('<p>...and '+ (data.length - 15)+' more!</p>');
           // }
+          $('#display').html("");
           $('<ul/>', {
             'class': 'listWrapper',
             html: items.join('')
